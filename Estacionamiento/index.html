@@ -5,47 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estacionamiento</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link rel="shortcut icon" href="Estacionamiento.png" type="image/x-icon">
 </head>
 <body>
     <script src="JQuerry.js"></script>
     <script src="logica.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="sweetalert2.min.js"></script>
     
 
-    <div class="header">
-        <div class="container">
-
-            <div class="logo">
-               
-               
-                 <span> <img src="Dreams.png" class="Nube"></span> 
-            </div>
-            <div class="boton">
-               <label for="btn-menu">Menu</label> 
-            </div>
-            <input type="checkbox" id="btn-menu">
-            <nav class="menu">
-                <a href="">Aaron</a>
-                <a href="">Gamaliel</a>
-                <a href="">Zamora</a>
-                <a href="">Toribio</a>
-            </nav>
-        </div>
-    </div>
     
-    <div id="uno">
-    <input class="Buscador" id="matricula" type="text" placeholder="Matricula">
+    <header class="container-fluid"> 
+        <br>
+        <h1>Estacionamiento</h1>
+        <br>
+    </header>
+    
+    <div class="container-fluid" id="uno">
     <br>
-    <input class="Buscador" id="marca" type="text" placeholder="Marca">
+    <label>Ingresar matricula:</label>
     <br>
-    <button  id="enviar" >registrar auto</button>
+    <input id="matricula" type="text" placeholder="" required>
+    <br>
+    <label>Confirma tu matricula:</label>
+    <br>
+    <input id="marca" type="text" placeholder="" required>
+    <br>
+    <br>
+    <button id="enviar" >Registra tu auto</button>
     <br>
     <br>
     </div>
     
 
-    <div id="dos">
-        <input class="Buscador" id="matricula2" type="text">
+    <div class="container-fluid" id="dos">
+        <br>
+        <label>Ingresar tu matricula:</label>
+        <br>
+        <input id="matricula2" type="text">
+        <br>
+        <br>
+        <label>Horas:</label>
         <br>
         <select id="horas">
             <option value="1">1-3 horas</option>
@@ -53,25 +56,36 @@
             <option value="3">6 en adelante</option>
         </select>
         <br>
-        <button id="enviar2">enviar</button>
+        <br>
+        <button id="enviar2">Enviar</button>
         <br>
         <br>
     </div>
 
-    <div id="tres">
+    <div class="container-fluid" id="tres">
         <label id="Monto"></label>
          
         <br>
-        <input class="Buscador" id="recivido" type="text" placeholder="dinero">
         <br>
-        <button id="enviar3">pago</button>
+        <label>Cantidad Recibida:</label>
+        <br>
+        <input id="recivido" type="text" placeholder="">
+        <br>
+        <br>
+        <button id="enviar3">Pago</button>
         <br>
         <br>
     </div>
 
-    <div id="control">
-        <label >Buscar Autos</label>
-        <input class="Buscador" id="matri" type="text">
+    <div  class="container-fluid" id="control">
+        <br>
+        <label >Buscar Auto</label>
+        <br>
+        <label>Ingresar tu matricula:</label>
+        <br>
+        <input  id="matri" type="text">
+        <br>
+        <br>
         <button id="buscar">Buscar</button>
 
     </div>

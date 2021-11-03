@@ -12,6 +12,9 @@ $(document).ready(function () {
         matricula.push(aux1);
         marca.push(aux2);
         console.log(marca,matricula);
+
+        //alerta
+        Swal.fire('Registrada Matricula: ',aux1)
     });
 
     //dos
@@ -27,19 +30,23 @@ $(document).ready(function () {
             if(tiempo==1){
                 costo.push(100);
                 
-                alert(costo[index]);
+            
+                Swal.fire('Costo: $100 pesos ')
+                
             }
 
             if(tiempo==2){
                 costo.push(200);
                 
-                alert(costo[index]);
+                
+                Swal.fire('Costo: $200 pesos ')
             }
 
             if(tiempo==3){
                 costo.push(500);
                 
-                alert(costo[index]);
+            
+                Swal.fire('Costo: $500 pesos ')
             }
 
             confirmacion=true;
@@ -47,7 +54,15 @@ $(document).ready(function () {
     }
         
         if(confirmacion==false){
-            alert(`automovil matricula: ${carroFuera}`);
+        
+
+            Swal.fire({
+                icon: 'error',
+                title: 'ERROR',
+                text: 'Auto no encontrado o inexistente!',
+                footer: '<a href="">vuelve a intentarlo !!</a>'
+              })
+
         }
         
            //tres
@@ -65,7 +80,14 @@ $(document).ready(function () {
                     console.log(total);
                     if(total==0){
 
-                        alert("deuda saldada hasta pronto");
+                        
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Pago saldado hasta pronto !!',
+                            showConfirmButton: false,
+                            timer: 1500
+                          })
 
                         //se elimina el elemento seleccionado
                         costo.splice(index);
@@ -75,11 +97,18 @@ $(document).ready(function () {
                     }
                     if(total>0){
                         total=total-costo[index];
-                        alert(`usted debe: ${total}`);
+                      
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Falta: ',total,
+                            text: 'liquidar el faltante!',
+                          })
+
                     }
                     if(total<0){
                         costo[index]=costo[index]-total;
-                        alert(`su cambio es  de: ${costo[index]}`);
+                        Swal.fire('su cambio es de:',costo[index])
                     }
                 }
            }
@@ -91,16 +120,25 @@ $(document).ready(function () {
         var matri=$("#matri").val(); 
            if(matri==""){ 
                 for (let index = 0; index < matricula.length; index++) {
-                    alert(`hay: ${index+1}`);
+                    
                    
+                    Swal.fire(
+                        'se encuentran !!',
+                        'autos',index+1,
+                        'question'
+                      )
 
                     
                     
                 }
             }
             for (let index = 0; index < matricula.length; index++) {
-                if(matri==matricula){
-                    alert(`se encuentra en almacen`);
+                if(matri==matricula[index]){
+                    Swal.fire(
+                        'Encontrado!',
+                        'Su auto esta ubicado en la parte 7-A del Estacionamiento:',matri,
+                        'success'
+                      )
                  }
                 
             }
